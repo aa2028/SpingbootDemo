@@ -38,7 +38,7 @@ public class RecordController {
         return "showrecord";
     }
 
-    @RequestMapping("/addRecord")
+    @RequestMapping("/mytest")
     public String addRecord(Integer bookId , HttpSession session){
         //从session中获取用户名
         String userName = (String)session.getAttribute("name");
