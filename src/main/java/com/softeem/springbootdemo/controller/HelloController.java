@@ -39,7 +39,7 @@ public class HelloController {
     @RequestMapping("/mypei")
     @ResponseBody
     public String addRecord(){
-        System.out.println("裴杰yyq");
+        System.out.println("裴杰yyq0");
         return "peijie";
     }
 }
