@@ -31,15 +31,10 @@ public class HelloController {
         return "addbook";
     }
 
-    /**
-     * 新添加的方法哈哈
-     * @return 返回裴杰
-     * @author peige
-     */
-    @RequestMapping("/mypei")
+    @RequestMapping("/showPei")
     @ResponseBody
-    public String addRecord(){
-        System.out.println("裴杰");
-        return "peijie";
+    public String showPei(){
+        System.out.println("showPei");
+        return "success_pei";
     }
 }
