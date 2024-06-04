@@ -58,7 +58,7 @@ public class HelloController {
         System.out.println("我勒个豆");
         System.out.println("抖抖抖");
         System.out.println("我的");
-        System.out.println("1234567");
+        System.out.println("123456");
         return "hellohello";
     }
 }
