@@ -42,4 +42,11 @@ public class HelloController {
         System.out.println("裴杰");
         return "peijie";
     }
+
+    @RequestMapping("/addRecord2")
+    @ResponseBody
+    public String addRecord2(){
+        System.out.println("裴杰2");
+        return "peijie";
+    }
 }
