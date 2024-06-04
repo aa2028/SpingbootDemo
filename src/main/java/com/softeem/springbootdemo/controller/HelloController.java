@@ -39,7 +39,14 @@ public class HelloController {
     @RequestMapping("/addRecord")
     @ResponseBody
     public String addRecord(){
-        System.out.println("裴杰");
+        System.out.println("裴杰yyq0");
+        return "peijie";
+    }
+
+    @RequestMapping("/addRecord2")
+    @ResponseBody
+    public String addRecord2(){
+        System.out.println("裴杰2yyq");
         return "peijie";
     }
 
