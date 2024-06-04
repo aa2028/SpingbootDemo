@@ -50,6 +50,7 @@ public class HelloController {
         System.out.println("cjp");
         System.out.println("我勒个豆");
         System.out.println("抖抖抖");
+        System.out.println("我的");
         return "hellohello";
     }
 }
