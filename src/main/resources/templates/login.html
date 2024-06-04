@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#f0ffff">
+
+<form method="post" action="checkLogin" style="margin-top: 100px">
+    <h1 style="text-align: center">用户登录</h1>
+    <div style="text-align: center; color: red" th:text="${msg}"></div>
+  <table border="1" style="margin: 0 auto;">
+      <tr>
+          <td>用户名:</td>
+          <td><input type="text" name="name" th:value="${user!=null?user.name:''}"/></td>
+      </tr>
+      <tr>
+          <td>密码:</td>
+          <td><input type="password" name="password"/></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+            <input type="submit" value="登录">
+        </td>
+      </tr>
+  </table>
+</form>
+</body>
+</html>

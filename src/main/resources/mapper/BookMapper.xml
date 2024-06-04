@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.softeem.springbootdemo.mapper.BookMapper">
+
+    <insert id="addBook">
+        insert into book(name,isbn,press,author,price,status) values(#{name},#{isbn},#{press},#{author},#{price},#{status})
+    </insert>
+
+    <delete id="deleteBook">
+        delete from book where id=#{id}
+    </delete>
+
+    <update id="updateBook">
+        update book set name=#{name},isbn=#{isbn},press=#{press},author=#{author},price=#{price},status=#{status} where id=#{id}
+    </update>
+
+
+    <select id="findAllBook" resultType="com.softeem.springbootdemo.pojo.Book">
+        select * from book
+    </select>
+
+    <select id="findBookById" resultType="com.softeem.springbootdemo.pojo.Book">
+        select * from book where id=#{id}
+    </select>
+
+    <update id="updateBookStatus">
+        update book set status=#{status} where id=#{id}
+    </update>
+</mapper>

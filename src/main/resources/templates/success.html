@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mycss{
+            float: right;
+            margin-right: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>图书列表</h1>
+<a href="addBook" class="mycss">添加图书</a>
+<table border="1" width="100%">
+    <tr>
+        <th>编号</th>
+        <th>书名</th>
+        <th>ISBN</th>
+        <th>出版社</th>
+        <th>作者</th>
+        <th>价格</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="b:${pageInfo.list}">
+        <td th:text="${b.id}"></td>
+        <td th:text="${b.name}"></td>
+        <td th:text="${b.isbn}"></td>
+        <td th:text="${b.press}"></td>
+        <td th:text="${b.author}"></td>
+        <td th:text="${b.price}"></td>
+        <td th:if="${b.status == 0}">可借阅</td>
+        <td th:if="${b.status == 1}">已借阅</td>
+        <td th:if="${b.status == 2}">归还中</td>
+        <td th:if="${b.status == 3}">已下架</td>
+        <td align="center">
+            <a href="#" th:onclick="'javascript:myDeleteBook(\'' + ${b.id} + '\')'">删除</a>
+            <a th:href="@{/findBookById(id=${b.id})}">编辑</a>
+            <span th:if="${b.status == 0}">
+                <a th:href="@{addRecord(bookId=${b.id})}">借书</a>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="11" align="center">
+            <a th:href="@{/findAllBook(pageNum=1)}">首页</a>
+            <a th:href="@{/findAllBook(pageNum=${pageInfo.prePage})}">上一页</a>
+            <span>[[${pageInfo.pageNum}]]/[[${pageInfo.pages}]]/[[${pageInfo.total}]]</span>
+            <a th:href="@{/findAllBook(pageNum=${pageInfo.nextPage})}">下一页</a>
+            <a th:href="@{/findAllBook(pageNum=${pageInfo.pages})}">末页</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    function myDeleteBook(id){
+        if( window.confirm("确定是否删除此数据?")){
+            window.location.href = "deleteBookById?id="+id
+        }
+    }
+</script>

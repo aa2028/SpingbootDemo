@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加或修改图书</title>
+    <style>
+        body{
+            background-image: url("img/beijing.jpg");
+            background-size: 100% 550px;
+        }
+    </style>
+</head>
+<body>
+<h1>添加修改图书</h1>
+<form method="post" action="saveOrUpdateBook">
+    <input type="hidden" name="id" th:value="${book!=null?book.id:''}"/>
+    <input type="hidden" name="status" th:value="${book!=null?book.status:''}"/>
+  <table border="1">
+    <tr>
+        <td>书名:</td>
+        <td><input type="text" name="name" th:value="${book!=null?book.name:''}"/></td>
+    </tr>
+      <tr>
+          <td>ISBN:</td>
+          <td><input type="text" name="isbn" th:value="${book!=null?book.isbn:''}"/></td>
+      </tr>
+      <tr>
+          <td>出版社:</td>
+          <td><input type="text" name="press" th:value="${book!=null?book.press:''}"/></td>
+      </tr>
+      <tr>
+          <td>作者:</td>
+          <td><input type="text" name="author" th:value="${book!=null?book.author:''}"/></td>
+      </tr>
+      <tr>
+          <td>价格:</td>
+          <td><input type="text" name="price" th:value="${book!=null?book.price:''}"/></td>
+      </tr>
+      <tr>
+          <td colspan="2" align="center">
+              <input type="submit" value="提交">
+          </td>
+      </tr>
+  </table>
+</form>
+</body>
+</html>

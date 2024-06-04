@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>借阅记录列表</h1>
+
+<table border="1" width="100%">
+    <tr>
+        <th>编号</th>
+        <th>书名</th>
+        <th>用户名</th>
+        <th>借阅时间</th>
+        <th>状态</th>
+        <th>归还时间</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="r:${pageInfo.list}">
+        <td th:text="${r.id}"></td>
+        <td th:text="${r.bookName}"></td>
+        <td th:text="${r.userName}"></td>
+        <td th:text="${r.borrowtime}"></td>
+        <td th:if="${r.status == 0}">借阅</td>
+        <td th:if="${r.status == 1}">归还</td>
+        <td th:text="${r.returntime}"></td>
+        <td th:if="${r.status == 0}"><a th:href="@{/returnBook(id=${r.id})}">归还</a></td>
+        <td th:if="${r.status == 1}">已归还</td>
+
+    </tr>
+    <tr>
+        <td colspan="10" align="center">
+            <a th:href="@{/findRecrod(pageNum=1)}">首页</a>
+            <a th:href="@{/findRecrod(pageNum=${pageInfo.prePage})}">上一页</a>
+            <span>[[${pageInfo.pageNum}]]/[[${pageInfo.pages}]]/[[${pageInfo.total}]]</span>
+            <a th:href="@{/findRecrod(pageNum=${pageInfo.nextPage})}">下一页</a>
+            <a th:href="@{/findRecrod(pageNum=${pageInfo.pages})}">末页</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
