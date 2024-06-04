@@ -36,7 +36,7 @@ public class HelloController {
      * @return 返回裴杰
      * @author peige
      */
-    @RequestMapping("/addRecord")
+    @RequestMapping("/mypei")
     @ResponseBody
     public String addRecord(){
         System.out.println("裴杰");
