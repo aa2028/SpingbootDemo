@@ -42,4 +42,10 @@ public class HelloController {
         System.out.println("裴杰");
         return "peijie";
     }
+
+    @RequestMapping("/hello")
+    public String helloWorld(){
+        System.out.println("helloworld");
+        return "hello";
+    }
 }
