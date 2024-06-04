@@ -48,6 +48,7 @@ public class HelloController {
         System.out.println("hzs");
         System.out.println("zbj");
         System.out.println("cjp");
+        System.out.println("我勒个豆");
         return "hellohello";
     }
 }
