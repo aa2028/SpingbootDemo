@@ -47,6 +47,7 @@ public class HelloController {
     public String helloWorld(){
         System.out.println("hzs");
         System.out.println("zbj");
+        System.out.println("cjp");
         return "hellohello";
     }
 }
